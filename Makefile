@@ -1,5 +1,6 @@
 UID = $(shell id -u)
 GID = $(shell id -g)
+
 CERTS_DIR = .certs
 MKCERT = mkcert
 
@@ -7,7 +8,7 @@ build: halt
 	docker compose build --build-arg UID=$(UID) --build-arg GID=$(GID)
 .PHONY: build
 
-up: compose
+up: compose build-jar compose-logs
 .PHONY: up
 
 halt:
@@ -20,8 +21,12 @@ ssh:
 build-jar:
 	docker compose exec app /bin/bash ./mvnw clean install
 
-compose: $(CERTS_DIR)
-	docker compose up
+compose: $(CERTS_DIR) 
+	docker compose up -d
+.PHONY: compose
+
+compose-logs: $(CERTS_DIR) 
+	docker compose up 
 .PHONY: compose
 
 $(CERTS_DIR):

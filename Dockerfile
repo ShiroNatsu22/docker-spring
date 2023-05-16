@@ -10,19 +10,16 @@ RUN groupmod -g $GID ${USER}
 COPY .mvn/ .mvn
 COPY mvnw pom.xml ./
 
-RUN ./mvnw dependency:go-offline
 
 RUN mkdir /var/www
-
 RUN chown $UID:$GID /var/www
-
-COPY target ./target
 
 COPY src ./src
 
+RUN ./mvnw dependency:go-offline
 
 USER ${USER}
 
-WORKDIR /app
+WORKDIR /var/www
 
 CMD ["./mvnw", "spring-boot:run"]
