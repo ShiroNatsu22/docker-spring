@@ -7,4 +7,4 @@
     make up-logs
 
 # port 8080 is the default port with http, https is WIP
-
+    http://localhost:8080
