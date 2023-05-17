@@ -4,5 +4,5 @@
     make up && make build-jar
 
 # To view live logs. To use another Makefile command use another instace of terminal
-    make up-live-logs 
+    make up-logs
 
