@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class SpringBootDockerApplication {
 
-	@RequestMapping("/home")
-	public String home() {
-		return "Test";
+	@RequestMapping("/health-check")
+	public String healthCheck() {
+		return "OK";
 	}
 
 	public static void main(String[] args) {

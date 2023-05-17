@@ -8,8 +8,11 @@ build: halt
 	docker compose build --build-arg UID=$(UID) --build-arg GID=$(GID)
 .PHONY: build
 
-up: compose build-jar compose-logs
+up: compose
 .PHONY: up
+
+up-logs: compose-live-logs 
+.PHONY: up-live-logs
 
 halt:
 	docker compose stop
@@ -18,16 +21,16 @@ halt:
 ssh:
 	docker compose exec app /bin/bash
 
-build-jar:
-	docker compose exec app /bin/bash ./mvnw clean install
+build-jar: 
+	docker compose exec app /bin/bash ./mvnw clean install 
 
 compose: $(CERTS_DIR) 
 	docker compose up -d
 .PHONY: compose
 
-compose-logs: $(CERTS_DIR) 
+compose-live-logs : $(CERTS_DIR) 
 	docker compose up 
-.PHONY: compose
+.PHONY: compose-live-logs
 
 $(CERTS_DIR):
 	$(MAKE) certs
