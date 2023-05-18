@@ -14,11 +14,6 @@ public class SpringBootDockerApplication {
 		return "OK";
 	}
 
-	@RequestMapping("/")
-	public String home() {
-		return "Welcome to Spring Boot Docker";
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootDockerApplication.class, args);
 	}
