@@ -1,9 +1,6 @@
 UID = $(shell id -u)
 GID = $(shell id -g)
 
-CERTS_DIR = .certs
-MKCERT = mkcert
-
 build: halt
 	docker compose build --build-arg UID=$(UID) --build-arg GID=$(GID)
 .PHONY: build
@@ -22,21 +19,19 @@ ssh:
 	docker compose exec app /bin/bash
 
 build-jar: 
-	docker compose exec app /bin/bash ./mvnw clean install 
+	docker compose exec app /bin/bash ./mvnw clean install
 
-compose: $(CERTS_DIR) 
+compose:
 	docker compose up -d
 .PHONY: compose
 
-compose-live-logs : $(CERTS_DIR) 
+compose-live-logs: 
 	docker compose up 
 .PHONY: compose-live-logs
 
-$(CERTS_DIR):
-	$(MAKE) certs
 
-certs:
-	mkdir -p $(CERTS_DIR)
-	$(MKCERT) -install
-	$(MKCERT) -cert-file $(CERTS_DIR)/certificate.pem -key-file $(CERTS_DIR)/certificate-key.pem localhost
-.PHONY: certs
+create-cert:
+	docker compose exec app /bin/bash -c "cd src/main/resources; keytool -genkeypair -alias certs -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore certs.p12 -validity 3650"
+
+.phony: create-cert
+
