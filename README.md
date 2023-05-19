@@ -1,7 +1,7 @@
 # Docker Spring
 
 # To initialize project for the first time
-    make up && make build-jar
+    make build && make up && make build-jar
 
 # To create certificates to use HTTPS execute
     make create-cert
