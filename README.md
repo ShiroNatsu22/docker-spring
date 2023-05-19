@@ -11,5 +11,5 @@
 # To view live logs. To use another Makefile command use another instace of terminal
     make up-logs
 
-# Default config is set to
+# Default port is 8080 with https
     http://localhost:8080
