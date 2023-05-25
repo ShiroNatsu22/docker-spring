@@ -15,6 +15,7 @@ RUN mkdir /var/www
 RUN chown $UID:$GID /var/www
 
 COPY src ./src
+COPY apps ./apps
 
 RUN ./mvnw dependency:go-offline
 
