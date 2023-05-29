@@ -1,4 +1,4 @@
-package com.example.springbootdocker.controller.health_check;
+package com.example.springbootdocker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
