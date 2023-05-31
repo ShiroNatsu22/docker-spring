@@ -1,4 +1,4 @@
-package com.example.springbootdocker.controller.health_check;
+package archetype.java.controller.health_check;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.RequestMapping;

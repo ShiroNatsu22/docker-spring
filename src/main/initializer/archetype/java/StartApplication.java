@@ -1,4 +1,4 @@
-package com.example.springbootdocker;
+package archetype.java.initializer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

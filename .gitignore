@@ -38,4 +38,4 @@ build/
 .m2/*
 .bash_history
 *.p12
-resources/application.properties
+src/main/resources/application.properties

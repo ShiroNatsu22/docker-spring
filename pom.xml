@@ -62,7 +62,8 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>apps/main/java</source>
+								<source>apps/main/archetype</source>
+								<source>src</source>
 							</sources>
 						</configuration>
 					</execution>
@@ -73,7 +74,7 @@
 				<artifactId>db-migrator-maven-plugin</artifactId>
 				<version>${activejdbc.version}</version>
 				<configuration>
-					<configFile>${project.basedir}/resources/database.properties</configFile>
+					<configFile>${project.basedir}/config/database.properties</configFile>
 					<environments>${environments}</environments>
 				</configuration>
 				<executions>

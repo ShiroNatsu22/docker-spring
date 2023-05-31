@@ -6,7 +6,7 @@ build: halt
 .PHONY: build
 
 up: compose
-.PHONY: up
+.PHONY: up 
 
 up-logs: compose-live-logs 
 .PHONY: up-live-logs
@@ -21,8 +21,11 @@ ssh:
 build-jar: 
 	docker compose exec app /bin/bash ./mvnw clean install
 
+repackage-jar:
+	docker compose exec app /bin/bash ./mvnw clean package spring-boot:repackage 
+
 compose:
-	docker compose up -d
+	docker compose up -d 
 .PHONY: compose
 
 compose-live-logs: 
@@ -30,7 +33,7 @@ compose-live-logs:
 .PHONY: compose-live-logs
 
 create-cert:
-	docker compose exec app /bin/bash -c "cd resources; keytool -genkeypair -alias certs -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore certs.p12 -validity 3650"
+	docker compose exec app /bin/bash -c "cd src/main/resources; keytool -genkeypair -alias certs -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore certs.p12 -validity 3650"
 
 .phony: create-cert
 
