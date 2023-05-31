@@ -35,3 +35,10 @@ create-cert:
 
 .phony: create-cert
 
+migrations-create:
+	docker compose exec app /bin/bash  -c "./mvnw db-migrator:new -Dname=$(name)"
+
+
+migrations-migrate:
+	docker compose exec app /bin/bash -c "./mvnw  db-migrator:migrate"
+	
