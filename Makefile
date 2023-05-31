@@ -29,9 +29,8 @@ compose-live-logs:
 	docker compose up 
 .PHONY: compose-live-logs
 
-
 create-cert:
-	docker compose exec app /bin/bash -c "cd src/main/resources; keytool -genkeypair -alias certs -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore certs.p12 -validity 3650"
+	docker compose exec app /bin/bash -c "cd resources; keytool -genkeypair -alias certs -keyalg RSA -keysize 2048 -storetype PKCS12 -keystore certs.p12 -validity 3650"
 
 .phony: create-cert
 

@@ -16,6 +16,7 @@ RUN chown $UID:$GID /var/www
 
 COPY src ./src
 COPY apps ./apps
+COPY resources ./resources
 
 RUN ./mvnw dependency:go-offline
 

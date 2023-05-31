@@ -73,7 +73,7 @@
 				<artifactId>db-migrator-maven-plugin</artifactId>
 				<version>${activejdbc.version}</version>
 				<configuration>
-					<configFile>${project.basedir}/src/main/resources/database.properties</configFile>
+					<configFile>${project.basedir}/resources/database.properties</configFile>
 					<environments>${environments}</environments>
 				</configuration>
 				<executions>
