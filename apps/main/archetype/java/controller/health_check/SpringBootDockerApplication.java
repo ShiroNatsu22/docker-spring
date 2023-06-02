@@ -1,10 +1,8 @@
-package archetype.java.controller.health_check;
+package main.archetype.java.controller.health_check;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
 public class SpringBootDockerApplication {
 
 	@RequestMapping("/health-check")
