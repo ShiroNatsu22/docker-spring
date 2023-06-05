@@ -1,4 +1,4 @@
-package main.initializer.archetype.java;
+package javapp.archetype;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -13,6 +13,7 @@ public class StartApplication {
     public String index() {
         return "Welcome to Dockerized Spring Boot Application!";
     }
+
 
     public static void main(String[] args) {
         SpringApplication.run(StartApplication.class, args);
