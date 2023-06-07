@@ -49,6 +49,24 @@
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
 			<version>3.1.0</version>
 		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+        <dependency>
+            <groupId>net.minidev</groupId>
+            <artifactId>json-smart</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>6.2.4.Final</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -73,7 +91,6 @@
 						</goals>
 						<configuration>
 							<sources>
-								<source>apps/main/archetype</source>
 								<source>src</source>
 							</sources>
 						</configuration>
