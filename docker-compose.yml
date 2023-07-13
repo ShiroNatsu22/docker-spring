@@ -16,7 +16,6 @@ services:
   db:
     container_name: db-spring-docker
     image: postgres:latest
-    restart: always
     environment:
       - POSTGRES_USER=java
       - POSTGRES_PASSWORD=java
