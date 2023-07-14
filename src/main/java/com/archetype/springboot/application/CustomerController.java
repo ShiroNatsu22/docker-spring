@@ -17,7 +17,6 @@ public class CustomerController {
 
     @RequestMapping("/user/register")
     public List<Customer> register() {
-        //
         return userService.test();
     }
 
