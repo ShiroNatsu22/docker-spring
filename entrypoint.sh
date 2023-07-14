@@ -7,4 +7,3 @@ export TERM=xterm
 while true; do
     watch -d -t -g "ls -lR . | sha1sum" && ./mvnw clean install compile
 done
-
