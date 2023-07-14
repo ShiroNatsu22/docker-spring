@@ -5,7 +5,7 @@ import com.archetype.springboot.domain.entity.Customer;
 
 import java.util.List;
 
-public interface UserService {
+public interface CustomerService {
     List<Customer> test();
 
 }

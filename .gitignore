@@ -39,4 +39,5 @@ build/
 .bash_history
 *.p12
 src/main/resources/application.properties
-src/main/resources/hibernate.cfg.xml.bck
+src/main/resources/hibernate.cfg.xml
+config/database.properties

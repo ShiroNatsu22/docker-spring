@@ -13,13 +13,11 @@ COPY mvnw pom.xml ./
 
 RUN mkdir /var/www
 RUN chown $UID:$GID /var/www
-RUN apt-get update && apt-get install dos2unix
+
 COPY src ./src
 COPY config ./config
 COPY entrypoint.sh ./entrypoint.sh
 
-RUN dos2unix mvnw && dos2unix entrypoint.sh
-RUN chmod +x mvnw && chmod +x entrypoint.sh
 
 RUN ./mvnw dependency:go-offline
 
